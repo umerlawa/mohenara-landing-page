@@ -31,9 +31,9 @@ export function Header() {
             <Image
               src="/icon.svg"
               alt="Mohenara RCM"
-              width={180}
-              height={40}
-              className="h-10 w-auto"
+              width={250}
+              height={80}
+              className="h-14 w-auto"
               priority
             />
           </div>

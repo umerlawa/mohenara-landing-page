@@ -126,6 +126,32 @@
   }
 }
 
+/* Prevent text selection on interactive elements */
+.select-none-interactive {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Cards should not have selectable text and maintain pointer cursor */
+[class*="card"],
+section:not(.selectable) {
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: default;
+}
+
+[class*="card"] *,
+section:not(.selectable) * {
+  cursor: inherit;
+}
+
+/* Allow text selection in form inputs */
+input, textarea, [contenteditable="true"] {
+  user-select: text;
+  -webkit-user-select: text;
+  cursor: text;
+}
+
 /* Hero animations */
 @keyframes float {
   0%, 100% {
