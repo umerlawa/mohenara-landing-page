@@ -14,17 +14,11 @@ export const metadata: Metadata = {
   title: 'Mohenara - Denial Management for Physical Therapy Practices',
   description: 'Stop writing off denied claims. Mohenara specializes in denial investigation and appeals for PT and rehabilitation practices.',
   icons: {
-    icon: [
-      {
-        url: '/icon-32x32.png',
-        sizes: '32x32',
-        type: 'image/png',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
+    icon: {
+      url: '/icon-32x32.png',
+      sizes: '32x32',
+      type: 'image/png',
+    },
     apple: '/apple-icon.png',
   },
 }

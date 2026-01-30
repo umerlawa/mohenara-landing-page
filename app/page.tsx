@@ -19,7 +19,7 @@ export default function Home() {
       <PainPoints />
       <Services />
       <Differentiators />
-      <HowItWorksAnimated /> // Updated component name to HowItWorks
+      <HowItWorksAnimated />
       <Contact />
       <PreFooterCTA />
       <Footer />
