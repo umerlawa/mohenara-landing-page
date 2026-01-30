@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import Image from 'next/image'
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -28,9 +29,14 @@ export function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <span className="text-2xl font-bold text-primary" style={{ fontFamily: 'var(--font-logo)' }}>
-              Mohenara
-            </span>
+            <Image
+              src="/icon.svg"
+              alt="Mohenara RCM"
+              width={180}
+              height={40}
+              className="h-10 w-auto"
+              priority
+            />
           </div>
 
           {/* Desktop Navigation */}
