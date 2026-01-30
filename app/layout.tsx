@@ -13,7 +13,6 @@ const _dmSans = DM_Sans({ subsets: ["latin"], weight: ['600'] });
 export const metadata: Metadata = {
   title: 'Mohenara - Denial Management for Physical Therapy Practices',
   description: 'Stop writing off denied claims. Mohenara specializes in denial investigation and appeals for PT and rehabilitation practices.',
-  generator: 'v0.app',
   icons: {
     icon: [
       {
