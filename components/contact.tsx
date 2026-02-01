@@ -7,45 +7,38 @@ import { Mail, Phone } from 'lucide-react'
 import { useState } from 'react'
 
 export function Contact() {
-  const [formData, setFormData] = useState({
-    practiceName: '',
-    contactName: '',
-    email: '',
-    phone: '',
-    denialVolume: '',
-    message: '',
-  })
-
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState('')
+  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value,
-    }))
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
+    setSubmitMessage('')
+    setSubmitStatus(null)
+
+    const form = e.currentTarget
+    const formData = new FormData(form)
+
     try {
-      // In a real application, you would send this to an API endpoint
-      await new Promise(resolve => setTimeout(resolve, 500))
-      setSubmitMessage('Thank you! We\'ll review your submission and contact you shortly.')
-      setFormData({
-        practiceName: '',
-        contactName: '',
-        email: '',
-        phone: '',
-        denialVolume: '',
-        message: '',
+      const response = await fetch('https://formspree.io/f/xkozrepb', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
       })
-      setTimeout(() => setSubmitMessage(''), 5000)
-    } catch (error) {
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        setSubmitMessage('Thank you! We\'ll review your submission and contact you shortly.')
+        form.reset()
+      } else {
+        setSubmitStatus('error')
+        setSubmitMessage('Something went wrong. Please try again.')
+      }
+    } catch {
+      setSubmitStatus('error')
       setSubmitMessage('Something went wrong. Please try again.')
     } finally {
       setIsSubmitting(false)
@@ -56,7 +49,7 @@ export function Contact() {
     <section id="contact" className="py-20 sm:py-28 bg-muted/20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 
+          <h2
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-4 text-balance"
             style={{ fontFamily: 'var(--font-serif)' }}
           >
@@ -77,9 +70,7 @@ export function Contact() {
                 </label>
                 <input
                   type="text"
-                  name="practiceName"
-                  value={formData.practiceName}
-                  onChange={handleChange}
+                  name="practice_name"
                   required
                   className="w-full px-4 py-3 bg-background border border-muted rounded-lg text-foreground placeholder-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="Your practice name"
@@ -91,9 +82,7 @@ export function Contact() {
                 </label>
                 <input
                   type="text"
-                  name="contactName"
-                  value={formData.contactName}
-                  onChange={handleChange}
+                  name="contact_name"
                   required
                   className="w-full px-4 py-3 bg-background border border-muted rounded-lg text-foreground placeholder-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="Your name"
@@ -110,8 +99,6 @@ export function Contact() {
                 <input
                   type="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-background border border-muted rounded-lg text-foreground placeholder-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="your@email.com"
@@ -124,8 +111,6 @@ export function Contact() {
                 <input
                   type="tel"
                   name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-background border border-muted rounded-lg text-foreground placeholder-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="(555) 123-4567"
@@ -139,9 +124,7 @@ export function Contact() {
                 Estimated Monthly Denial Volume
               </label>
               <select
-                name="denialVolume"
-                value={formData.denialVolume}
-                onChange={handleChange}
+                name="denial_volume"
                 required
                 className="w-full px-4 py-3 bg-background border border-muted rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               >
@@ -160,8 +143,6 @@ export function Contact() {
               </label>
               <textarea
                 name="message"
-                value={formData.message}
-                onChange={handleChange}
                 rows={5}
                 className="w-full px-4 py-3 bg-background border border-muted rounded-lg text-foreground placeholder-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
                 placeholder="Tell us about your specific challenges..."
@@ -186,9 +167,13 @@ export function Contact() {
               {isSubmitting ? 'Submitting...' : 'Request Free Audit'}
             </Button>
 
-            {/* Success Message */}
+            {/* Status Message */}
             {submitMessage && (
-              <div className="p-4 bg-accent/10 border border-accent rounded-lg text-accent text-center">
+              <div className={`p-4 rounded-lg text-center ${
+                submitStatus === 'success'
+                  ? 'bg-[#5A8A72]/10 border border-[#5A8A72] text-[#5A8A72]'
+                  : 'bg-red-100 border border-red-400 text-red-700'
+              }`}>
                 {submitMessage}
               </div>
             )}
@@ -208,7 +193,7 @@ export function Contact() {
                 hello@mohenara.com
               </a>
               <a
-                href="tel:(646) 933-8860"
+                href="tel:+16469338860"
                 className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
               >
                 <Phone className="w-5 h-5" />
