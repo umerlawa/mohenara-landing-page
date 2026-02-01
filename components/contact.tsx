@@ -6,15 +6,15 @@ import { Mail, Phone } from 'lucide-react'
 
 export function Contact() {
   useEffect(() => {
-    // Load HubSpot forms script
+    // Load Tally.so embed script
     const script = document.createElement('script')
-    script.src = 'https://js-na2.hsforms.net/forms/embed/245032432.js'
-    script.defer = true
+    script.src = 'https://tally.so/widgets/embed.js'
+    script.async = true
     document.body.appendChild(script)
 
     return () => {
       // Cleanup script on unmount
-      const existingScript = document.querySelector('script[src="https://js-na2.hsforms.net/forms/embed/245032432.js"]')
+      const existingScript = document.querySelector('script[src="https://tally.so/widgets/embed.js"]')
       if (existingScript) {
         existingScript.remove()
       }
@@ -37,13 +37,16 @@ export function Contact() {
         </div>
 
         <div className="bg-card border border-muted rounded-lg p-8 sm:p-12 shadow-sm">
-          {/* HubSpot Form Embed */}
-          <div
-            className="hs-form-frame"
-            data-region="na2"
-            data-form-id="10b76293-7f46-400d-b6e1-90063edd3aff"
-            data-portal-id="245032432"
-          ></div>
+          {/* Tally.so Form Embed */}
+          <iframe
+            data-tally-src="https://tally.so/embed/rjPEVN?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            width="100%"
+            height="895"
+            frameBorder="0"
+            marginHeight={0}
+            marginWidth={0}
+            title="Request Free Denial Audit"
+          ></iframe>
 
           {/* Alternative Contact */}
           <div className="mt-12 pt-8 border-t border-muted">
