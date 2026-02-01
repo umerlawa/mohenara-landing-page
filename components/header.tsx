@@ -25,15 +25,15 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-sm border-b border-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-24">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Image
               src="/icon.svg"
               alt="Mohenara RCM"
-              width={250}
-              height={80}
-              className="h-14 w-auto"
+              width={280}
+              height={72}
+              className="h-16 w-auto"
               priority
             />
           </div>
