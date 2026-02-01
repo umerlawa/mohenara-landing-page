@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { Linkedin } from 'lucide-react'
 
 export function Footer() {
@@ -18,9 +19,9 @@ export function Footer() {
   ]
 
   const legalLinks = [
-    { label: 'Privacy Policy', href: '#' },
-    { label: 'Terms of Service', href: '#' },
-    { label: 'HIPAA Notice', href: '#' },
+    { label: 'Privacy Policy', href: '/privacy-policy' },
+    { label: 'Terms of Service', href: '/terms-of-service' },
+    { label: 'HIPAA Notice', href: '/hipaa-notice' },
   ]
 
   return (
@@ -63,13 +64,13 @@ export function Footer() {
             </h4>
             <nav className="space-y-3">
               {legalLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   className="block text-secondary-foreground/80 hover:text-secondary-foreground transition-colors text-sm"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
