@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 export function PreFooterCTA() {
   const handleCalendarClick = () => {
     // Open Google Calendar booking link
-    window.open('https://calendly.com', '_blank')
+    window.open('https://calendar.app.google/SJhXM3dSKe11UBYs5', '_blank')
   }
 
   return (
