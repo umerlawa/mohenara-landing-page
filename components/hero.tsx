@@ -15,9 +15,9 @@ export function Hero() {
     <section className="relative min-h-[75vh] flex items-center overflow-hidden" style={{ backgroundColor: '#F7F5F2' }}>
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Large gradient blob - moved down from top */}
+        {/* Large gradient blob - top right */}
         <div
-          className="absolute top-20 -right-20 w-96 h-96 rounded-full opacity-30"
+          className="absolute -top-24 -right-24 w-96 h-96 rounded-full opacity-30"
           style={{
             background: 'radial-gradient(circle, #2D6A6A 0%, transparent 70%)',
             animation: 'float 8s ease-in-out infinite'
@@ -47,7 +47,7 @@ export function Hero() {
       <div className="absolute inset-0 hidden lg:block overflow-hidden">
         {/* Card 1 - HIPAA Compliant */}
         <div
-          className="absolute top-[12%] right-48 w-72 rounded-2xl shadow-2xl backdrop-blur-sm"
+          className="absolute top-[12%] right-[12%] w-72 rounded-2xl shadow-2xl backdrop-blur-sm"
           style={{
             background: 'rgba(255, 255, 255, 0.85)',
             border: '1px solid rgba(45, 106, 106, 0.2)',
@@ -75,7 +75,7 @@ export function Hero() {
 
         {/* Card 2 - Performance-Based */}
         <div
-          className="absolute top-[38%] right-36 w-72 rounded-2xl shadow-2xl backdrop-blur-sm"
+          className="absolute top-[38%] right-[8%] w-72 rounded-2xl shadow-2xl backdrop-blur-sm"
           style={{
             background: 'rgba(212, 197, 176, 0.7)',
             border: '1px solid rgba(212, 197, 176, 0.5)',
@@ -103,7 +103,7 @@ export function Hero() {
 
         {/* Card 3 - PT Specialists */}
         <div
-          className="absolute top-[64%] right-52 w-72 rounded-2xl shadow-2xl backdrop-blur-sm"
+          className="absolute top-[64%] right-[15%] w-72 rounded-2xl shadow-2xl backdrop-blur-sm"
           style={{
             background: 'rgba(255, 255, 255, 0.75)',
             border: '1px solid rgba(45, 106, 106, 0.15)',
@@ -135,10 +135,15 @@ export function Hero() {
           {/* LEFT: Text Content */}
           <div className="space-y-6 max-w-xl">
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight text-balance"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight"
               style={{ fontFamily: 'var(--font-serif)' }}
             >
-              Stop Writing Off Denied Claims. Start Recovering Your Revenue.
+              <span className="block text-primary/70">
+                Stop Writing Off Denied Claims.
+              </span>
+              <span className="block text-primary mt-2">
+                Start Recovering Your Revenue.
+              </span>
             </h1>
 
             <p className="text-lg text-foreground/80 leading-relaxed max-w-md">
