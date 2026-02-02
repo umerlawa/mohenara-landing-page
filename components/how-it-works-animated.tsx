@@ -305,16 +305,19 @@ export function HowItWorksAnimated() {
         <div className="mt-16 bg-primary/5 border border-primary/20 rounded-lg p-8 md:p-12">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-primary mb-2">40%</div>
-              <p className="text-foreground/70">Average revenue recovery increase</p>
+              <div className="text-3xl font-bold text-primary mb-1">65%</div>
+              <p className="text-sm font-semibold text-foreground mb-1">Of Denials Go Unworked</p>
+              <p className="text-foreground/70 text-sm">Don't let recoverable revenue slip away</p>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary mb-2">Zero Risk</div>
-              <p className="text-foreground/70">Only pay from recovered amounts</p>
+              <div className="text-3xl font-bold text-primary mb-1">Zero Risk</div>
+              <p className="text-sm font-semibold text-foreground mb-1">Performance-Based Only</p>
+              <p className="text-foreground/70 text-sm">Pay only from successfully recovered amounts</p>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary mb-2">90 Days</div>
-              <p className="text-foreground/70">Average time to first recovery</p>
+              <div className="text-3xl font-bold text-primary mb-1">90 Days</div>
+              <p className="text-sm font-semibold text-foreground mb-1">Industry Recovery Timeline</p>
+              <p className="text-foreground/70 text-sm">When denials get proper attention, results follow</p>
             </div>
           </div>
         </div>
