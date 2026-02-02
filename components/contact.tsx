@@ -138,9 +138,12 @@ export function Contact() {
 
             {/* Message */}
             <div>
-              <label className="block text-sm font-semibold text-foreground mb-2">
+              <label className="block text-sm font-semibold text-foreground mb-1">
                 Message (Optional)
               </label>
+              <p className="text-xs text-foreground/60 mb-2">
+                Do not submit patient information here. We'll provide a secure channel after contract + BAA.
+              </p>
               <textarea
                 name="message"
                 rows={5}
