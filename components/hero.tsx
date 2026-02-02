@@ -135,15 +135,13 @@ export function Hero() {
           {/* LEFT: Text Content */}
           <div className="space-y-6 max-w-xl">
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary"
               style={{ fontFamily: 'var(--font-serif)' }}
             >
-              <span className="block text-primary/70">
-                Stop Writing Off Denied Claims.
-              </span>
-              <span className="block text-primary mt-2">
-                Start Recovering Your Revenue.
-              </span>
+              <span className="block leading-[1.1]">Stop Writing Off</span>
+              <span className="block leading-[1.1]">Denied Claims.</span>
+              <span className="block leading-[1.1] mt-3">Start Recovering</span>
+              <span className="block leading-[1.1]">Your Revenue.</span>
             </h1>
 
             <p className="text-lg text-foreground/80 leading-relaxed max-w-md">
