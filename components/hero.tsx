@@ -12,12 +12,12 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden" style={{ backgroundColor: '#F7F5F2' }}>
+    <section className="relative min-h-[75vh] flex items-center overflow-hidden" style={{ backgroundColor: '#F7F5F2' }}>
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Large gradient blob - top right */}
+        {/* Large gradient blob - moved down from top */}
         <div
-          className="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-30"
+          className="absolute top-20 -right-20 w-96 h-96 rounded-full opacity-30"
           style={{
             background: 'radial-gradient(circle, #2D6A6A 0%, transparent 70%)',
             animation: 'float 8s ease-in-out infinite'
@@ -35,7 +35,7 @@ export function Hero() {
 
         {/* Accent blob - right center */}
         <div
-          className="absolute top-1/3 right-12 w-64 h-64 rounded-full opacity-15"
+          className="absolute top-1/3 right-24 w-64 h-64 rounded-full opacity-15"
           style={{
             background: 'radial-gradient(circle, #2D6A6A 0%, transparent 70%)',
             animation: 'float 12s ease-in-out infinite 2s'
@@ -47,7 +47,7 @@ export function Hero() {
       <div className="absolute inset-0 hidden lg:block overflow-hidden">
         {/* Card 1 - HIPAA Compliant */}
         <div
-          className="absolute top-[18%] right-32 w-72 rounded-2xl shadow-2xl backdrop-blur-sm"
+          className="absolute top-[12%] right-48 w-72 rounded-2xl shadow-2xl backdrop-blur-sm"
           style={{
             background: 'rgba(255, 255, 255, 0.85)',
             border: '1px solid rgba(45, 106, 106, 0.2)',
@@ -75,7 +75,7 @@ export function Hero() {
 
         {/* Card 2 - Performance-Based */}
         <div
-          className="absolute top-[42%] right-20 w-72 rounded-2xl shadow-2xl backdrop-blur-sm"
+          className="absolute top-[38%] right-36 w-72 rounded-2xl shadow-2xl backdrop-blur-sm"
           style={{
             background: 'rgba(212, 197, 176, 0.7)',
             border: '1px solid rgba(212, 197, 176, 0.5)',
@@ -103,7 +103,7 @@ export function Hero() {
 
         {/* Card 3 - PT Specialists */}
         <div
-          className="absolute top-[66%] right-36 w-72 rounded-2xl shadow-2xl backdrop-blur-sm"
+          className="absolute top-[64%] right-52 w-72 rounded-2xl shadow-2xl backdrop-blur-sm"
           style={{
             background: 'rgba(255, 255, 255, 0.75)',
             border: '1px solid rgba(45, 106, 106, 0.15)',
