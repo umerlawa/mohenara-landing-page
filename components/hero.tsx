@@ -140,7 +140,7 @@ export function Hero() {
             >
               <span className="block leading-[1.1]">Stop Writing Off</span>
               <span className="block leading-[1.1]">Denied Claims.</span>
-              <span className="block leading-[1.1] mt-3">Start Recovering</span>
+              <span className="block leading-[1.1] mt-6">Start Recovering</span>
               <span className="block leading-[1.1]">Your Revenue.</span>
             </h1>
 
