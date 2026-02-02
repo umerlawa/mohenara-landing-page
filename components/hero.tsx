@@ -12,7 +12,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: '#F7F5F2' }}>
+    <section className="relative min-h-[85vh] flex items-center overflow-hidden" style={{ backgroundColor: '#F7F5F2' }}>
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Large gradient blob - top right */}
@@ -35,7 +35,7 @@ export function Hero() {
 
         {/* Accent blob - right center */}
         <div
-          className="absolute top-1/3 -right-20 w-64 h-64 rounded-full opacity-15"
+          className="absolute top-1/3 right-12 w-64 h-64 rounded-full opacity-15"
           style={{
             background: 'radial-gradient(circle, #2D6A6A 0%, transparent 70%)',
             animation: 'float 12s ease-in-out infinite 2s'
@@ -47,7 +47,7 @@ export function Hero() {
       <div className="absolute inset-0 hidden lg:block overflow-hidden">
         {/* Card 1 - HIPAA Compliant */}
         <div
-          className="absolute top-24 right-16 w-72 rounded-2xl shadow-2xl backdrop-blur-sm"
+          className="absolute top-[18%] right-32 w-72 rounded-2xl shadow-2xl backdrop-blur-sm"
           style={{
             background: 'rgba(255, 255, 255, 0.85)',
             border: '1px solid rgba(45, 106, 106, 0.2)',
@@ -63,12 +63,6 @@ export function Hero() {
               >
                 <ShieldCheck className="w-5 h-5" style={{ color: '#2D6A6A' }} />
               </div>
-              <span
-                className="text-xs font-bold uppercase tracking-wider"
-                style={{ color: '#5A8A72' }}
-              >
-                Certified
-              </span>
             </div>
             <h3 className="text-lg font-bold mb-1" style={{ color: '#2D6A6A' }}>
               HIPAA Compliant
@@ -81,12 +75,12 @@ export function Hero() {
 
         {/* Card 2 - Performance-Based */}
         <div
-          className="absolute top-1/2 right-8 w-68 rounded-2xl shadow-2xl backdrop-blur-sm"
+          className="absolute top-[42%] right-20 w-72 rounded-2xl shadow-2xl backdrop-blur-sm"
           style={{
             background: 'rgba(212, 197, 176, 0.7)',
             border: '1px solid rgba(212, 197, 176, 0.5)',
             animation: 'float 7s ease-in-out infinite 1s',
-            transform: 'translateY(-50%) translateZ(0)'
+            transform: 'translateZ(0)'
           }}
         >
           <div className="p-6">
@@ -97,12 +91,6 @@ export function Hero() {
               >
                 <TrendingUp className="w-5 h-5" style={{ color: '#2D6A6A' }} />
               </div>
-              <span
-                className="text-xs font-bold uppercase tracking-wider"
-                style={{ color: '#1E4D4D' }}
-              >
-                Zero Risk
-              </span>
             </div>
             <h3 className="text-lg font-bold mb-1" style={{ color: '#1E4D4D' }}>
               Performance-Based
@@ -115,7 +103,7 @@ export function Hero() {
 
         {/* Card 3 - PT Specialists */}
         <div
-          className="absolute bottom-24 right-24 w-76 rounded-2xl shadow-2xl backdrop-blur-sm"
+          className="absolute top-[66%] right-36 w-72 rounded-2xl shadow-2xl backdrop-blur-sm"
           style={{
             background: 'rgba(255, 255, 255, 0.75)',
             border: '1px solid rgba(45, 106, 106, 0.15)',
@@ -130,12 +118,6 @@ export function Hero() {
               >
                 <Users className="w-5 h-5" style={{ color: '#5A8A72' }} />
               </div>
-              <span
-                className="text-xs font-bold uppercase tracking-wider"
-                style={{ color: '#5A8A72' }}
-              >
-                Specialized
-              </span>
             </div>
             <h3 className="text-lg font-bold mb-1" style={{ color: '#2D6A6A' }}>
               PT Specialists
@@ -149,37 +131,32 @@ export function Hero() {
 
       {/* Content Container */}
       <div className="relative z-20 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center py-20 lg:py-0">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center py-16 lg:py-0">
           {/* LEFT: Text Content */}
-          <div className="space-y-8 max-w-xl">
+          <div className="space-y-6 max-w-xl">
             <h1
-              className="text-5xl sm:text-6xl lg:text-6xl font-bold leading-tight text-balance"
-              style={{ color: '#2D6A6A', fontFamily: 'var(--font-serif)' }}
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight text-balance"
+              style={{ fontFamily: 'var(--font-serif)' }}
             >
               Stop Writing Off Denied Claims. Start Recovering Your Revenue.
             </h1>
 
-            <p
-              className="text-lg sm:text-xl leading-relaxed"
-              style={{ color: '#2C2C2C', opacity: 0.8 }}
-            >
+            <p className="text-lg text-foreground/80 leading-relaxed max-w-md">
               Mohenara specializes in denial investigation and appeals for Physical Therapy and Rehabilitation practices.
             </p>
 
             <Button
               onClick={() => scrollToSection('#contact')}
               size="lg"
-              className="text-white font-semibold text-base py-6 px-8 rounded-full transition-all duration-300 hover:shadow-2xl hover:scale-105"
+              className="bg-primary hover:bg-secondary text-primary-foreground w-full sm:w-auto transition-all duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-0.5"
               style={{
-                backgroundColor: '#2D6A6A',
+                boxShadow: '0 4px 6px rgba(45, 106, 106, 0.2)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#1E4D4D'
-                e.currentTarget.style.boxShadow = '0 20px 40px rgba(45, 106, 106, 0.3)'
+                e.currentTarget.style.boxShadow = '0 8px 20px rgba(45, 106, 106, 0.35)'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#2D6A6A'
-                e.currentTarget.style.boxShadow = 'none'
+                e.currentTarget.style.boxShadow = '0 4px 6px rgba(45, 106, 106, 0.2)'
               }}
             >
               Get Your Free Denial Audit
@@ -204,9 +181,6 @@ export function Hero() {
           >
             <div className="flex items-center gap-2 mb-2">
               <ShieldCheck className="w-5 h-5" style={{ color: '#2D6A6A' }} />
-              <span className="text-xs font-bold uppercase tracking-wider" style={{ color: '#5A8A72' }}>
-                Certified
-              </span>
             </div>
             <h3 className="text-base font-bold mb-1" style={{ color: '#2D6A6A' }}>
               HIPAA Compliant
@@ -226,9 +200,6 @@ export function Hero() {
           >
             <div className="flex items-center gap-2 mb-2">
               <TrendingUp className="w-5 h-5" style={{ color: '#2D6A6A' }} />
-              <span className="text-xs font-bold uppercase tracking-wider" style={{ color: '#1E4D4D' }}>
-                Zero Risk
-              </span>
             </div>
             <h3 className="text-base font-bold mb-1" style={{ color: '#1E4D4D' }}>
               Performance-Based
@@ -248,9 +219,6 @@ export function Hero() {
           >
             <div className="flex items-center gap-2 mb-2">
               <Users className="w-5 h-5" style={{ color: '#5A8A72' }} />
-              <span className="text-xs font-bold uppercase tracking-wider" style={{ color: '#5A8A72' }}>
-                Specialized
-              </span>
             </div>
             <h3 className="text-base font-bold mb-1" style={{ color: '#2D6A6A' }}>
               PT Specialists
